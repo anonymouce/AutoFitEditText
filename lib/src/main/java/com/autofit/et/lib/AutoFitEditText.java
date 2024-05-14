@@ -6,18 +6,19 @@ import android.content.res.Resources;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.os.Build;
+import androidx.appcompat.widget.AppCompatEditText;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.AttributeSet;
 import android.util.SparseIntArray;
 import android.util.TypedValue;
-import android.widget.EditText;
+import android.view.KeyEvent;
 
 /**
  * Created by varsovski on 29-Oct-15.
  */
-public class AutoFitEditText extends EditText {
+public class AutoFitEditText extends AppCompatEditText {
     private static final int NO_LINE_LIMIT = -1;
     private final RectF _availableSpaceRect = new RectF();
     private final SparseIntArray _textCachedSizes = new SparseIntArray();
@@ -42,7 +43,7 @@ public class AutoFitEditText extends EditText {
          * text, it takes less space than {@code availableSpace}, > 0
          * otherwise
          */
-        public int onTestSize(int suggestedSize, RectF availableSpace);
+        int onTestSize(int suggestedSize, RectF availableSpace);
     }
 
     public AutoFitEditText(final Context context) {
@@ -275,6 +276,19 @@ public class AutoFitEditText extends EditText {
         super.onSizeChanged(width, height, oldwidth, oldheight);
         if (width != oldwidth || height != oldheight)
             reAdjust();
+    }
+
+
+
+    //from ->http://stackoverflow.com/a/27721774/1815624
+    @Override
+    public boolean onKeyPreIme(int keyCode, KeyEvent event) {
+        return true;
+//        if (event.getKeyCode() == KeyEdisvent.KEYCODE_BACK
+//                && event.getAction() == KeyEvent.ACTION_UP) {
+//            return true;
+//        }
+//        return super.dispatchKeyEvent(event);
     }
 
 
