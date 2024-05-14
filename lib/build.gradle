@@ -4,6 +4,8 @@ apply plugin: 'maven-publish'
 // plugins {
 //     id 'maven-publish'
 // }
+group = 'com.autofit.et.lib'
+version = '1.0'
 
 android {
     compileSdk 33
@@ -23,8 +25,13 @@ android {
     }
     compileOptions {
        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+       targetCompatibility = JavaVersion.VERSION_17
     }
+    publishing {
+    singleVariant("release") {
+        withSourcesJar()
+    }
+  }
 }
 
 dependencies {
