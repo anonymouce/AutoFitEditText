@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace 'com.viksaa.autofit.et'
     compileSdk 33
     
 
