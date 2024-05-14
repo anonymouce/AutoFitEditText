@@ -281,15 +281,15 @@ public class AutoFitEditText extends AppCompatEditText {
 
 
     //from ->http://stackoverflow.com/a/27721774/1815624
-    @Override
-    public boolean onKeyPreIme(int keyCode, KeyEvent event) {
-        return true;
-//        if (event.getKeyCode() == KeyEdisvent.KEYCODE_BACK
-//                && event.getAction() == KeyEvent.ACTION_UP) {
-//            return true;
-//        }
-//        return super.dispatchKeyEvent(event);
-    }
+//     @Override
+//     public boolean onKeyPreIme(int keyCode, KeyEvent event) {
+//         return true;
+// //        if (event.getKeyCode() == KeyEdisvent.KEYCODE_BACK
+// //                && event.getAction() == KeyEvent.ACTION_UP) {
+// //            return true;
+// //        }
+// //        return super.dispatchKeyEvent(event);
+//     }
 
 
 }
