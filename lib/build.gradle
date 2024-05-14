@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     compileSdk 33
@@ -27,3 +28,15 @@ dependencies {
    testImplementation 'junit:junit:4.13.2'
    implementation 'androidx.appcompat:appcompat:1.6.1'
 }
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.autofit.et.lib'
+                artifactId = 'AutofitEditText'
+                version = '1.0'
+            }
+        }
+    }
