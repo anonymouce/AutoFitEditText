@@ -28,7 +28,7 @@ Add this to your build.grade:
 and then in dependencies:
 ```javascript
 	dependencies {
-	        compile 'com.github.ViksaaSkool:AutoFitEditText:53238e2d29'
+	        implementation 'com.github.anonymouce:AutoFitEditText:1.0.0'
 	}
 ```
 In your respective .xml layout something like:
